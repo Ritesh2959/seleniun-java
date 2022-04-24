@@ -1,0 +1,58 @@
+
+@loanSignUp
+Scenario Outline: signup process for getting personalized loan                  # src/test/resources/borrow/loanSignup.feature:37
+  Given I navigate to zopa home page                                            # zopa.home.HomePageSD.iNavigateToZopaHomePage()
+  And I close cookies notifications at the end of page                          # zopa.home.HomePageSD.iCloseCookiesNotificationsAtTheEndOfPage()
+  When I click on the "borrow" menu link                                        # zopa.home.HomePageSD.iClickOnTheSomethingMenuLink(java.lang.String)
+  And I click on the "loan" sub menu link                                       # zopa.home.HomePageSD.iClickOnTheSomethingSubMenuLink(java.lang.String)
+  Then I should be on Zopa Loan Page                                            # zopa.borrow.LoansPageSD.iShouldBeOnZopaLoanPage()
+  And I click on the Get My personalised rates button                           # zopa.borrow.LoansPageSD.iClickOnTheGetMyPersonalisedRatesButton()
+  When I select the loan type "Home improvement"                                # zopa.borrow.PersonalLoanFormSD.iSelectTheLoanTypeSomething(java.lang.String)
+  And I enter my email "test@test.com" Id in about you section                  # zopa.borrow.PersonalLoanFormSD.iEnterMyEmailSomethingIdInAboutYouSection(java.lang.String)
+  And I select title "Mr" in about you section                                  # zopa.borrow.PersonalLoanFormSD.iSelectTitleSomethingInAboutYouSection(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input id="radio-id-Mr" type="radio" class="sc-gVgnHT EkhJw" value="Mr"> is not clickable at point (368, 546). Other element would receive the click: <div class="sc-cTkwdZ gVhvTQ sc-cbDGPM eTEuVf">...</div>
+  (Session info: chrome=100.0.4896.127)
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'Riteshs-MBP', ip: '2a02:c7f:f583:b00:d422:26ab:c82c:aab1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b331fef69fb457fdce69a6e8be06424f, clickElement {id=8f1b075d-e6f3-447e-8344-3670b0aadbeb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: /var/folders/4s/sx7dkt6d47j...}, goog:chromeOptions: {debuggerAddress: localhost:61914}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:61914/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (b331fef69fb457fdce69a6e8be06424f)] -> id: radio-id-Mr]
+Session ID: b331fef69fb457fdce69a6e8be06424f
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy27.click(Unknown Source)
+	at zopa.borrow.PersonalLoanFormPage.selectTitle(PersonalLoanFormPage.java:114)
+	at zopa.borrow.PersonalLoanFormSD.iSelectTitleSomethingInAboutYouSection(PersonalLoanFormSD.java:35)
+	at ✽.I select title "Mr" in about you section(file:///Users/ritesh.kumar/Desktop/personal/tech/zopa/src/test/resources/borrow/loanSignup.feature:21)
+
+  And I enter first name "Ritesh"                                               # zopa.borrow.PersonalLoanFormSD.iEnterFirstNameSomething(java.lang.String)
+  And I enter last name "Kumar"                                                 # zopa.borrow.PersonalLoanFormSD.iEnterLastNameSomething(java.lang.String)
+  And I enter date of birth "10" "10" "1980"                                    # zopa.borrow.PersonalLoanFormSD.iEnterDateOfBirthSomethingSomethingSomething(java.lang.String,java.lang.String,java.lang.String)
+  When I select employment status "employedFullTime" from your finances section # zopa.borrow.PersonalLoanFormSD.iSelectEmploymentStatusSomethingFromYourFinancesSection(java.lang.String)
+  And I enter annual income as "56000"                                          # zopa.borrow.PersonalLoanFormSD.iEnterAnnualIncomeAsSomething(java.lang.String)
+  And I select home owner "withMortgage" section                                # zopa.borrow.PersonalLoanFormSD.iSelectHomeOwnerSomethingSection(java.lang.String)
+  And I enter postcode "RM5 2LA"                                                # zopa.borrow.PersonalLoanFormSD.iEnterPostcodeSomething(java.lang.String)
+  And I click on lookup address button                                          # zopa.borrow.PersonalLoanFormSD.iClickOnLookupAddressButton()
+  And I select the address from the given list                                  # zopa.borrow.PersonalLoanFormSD.iSelectTheAddressFromTheGivenList()
+  And I select monthe "January" and year "2015"                                 # zopa.borrow.PersonalLoanFormSD.iSelectMontheSomethingAndYearSomething(java.lang.String,java.lang.String)
+  And I click on the use this address button                                    # zopa.borrow.PersonalLoanFormSD.iClickOnTheUseThisAddressButton()
+
+    Embedding screenshot [image/png 101106 bytes]
+
