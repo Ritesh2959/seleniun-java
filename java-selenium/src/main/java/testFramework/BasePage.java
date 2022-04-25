@@ -49,7 +49,7 @@ public class BasePage {
 
     public void ceaseProductionTests() {
         String currentUrl = driver.getCurrentUrl();
-        if (currentUrl.contains("https://www.zopa")) {
+        if (currentUrl.contains("https://www.google")) {
             Assert.fail("CAUTION ! -- Tests Running in Production ");
         }
     }

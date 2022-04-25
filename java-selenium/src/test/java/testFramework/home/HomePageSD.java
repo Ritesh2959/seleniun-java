@@ -11,7 +11,7 @@ public class HomePageSD {
     HomePage homePage = PageFactory.initElements(BrowserFactory.driver,HomePage.class);
 
     @Given("^I navigate to Google home page$")
-    public void iNavigateToZopaHomePage() {
+    public void iNavigateToGoogleHomePage() {
         homePage.homePageNavigation();
     }
 
